@@ -17,7 +17,7 @@ Article.prototype.toHtml = function() {
   //       - Now "compile" your template with Handlebars.
   var source = $('#banana-template').html();
   var template = Handlebars.compile(source);
-  console.log(Handlebars);
+
   // DONE: If your template will use properties that aren't on the object yet, add them.
   //   Since your template can't hold any JS logic, we need to execute the logic here.
   //   The result is added to the object as a new property, which can then be referenced by key in the template.
