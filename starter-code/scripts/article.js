@@ -9,7 +9,6 @@ function Article (opts) {
   this.category = opts.category;
   this.body = opts.body;
   this.publishedOn = opts.publishedOn;
-  this.daysAgo = opts.daysAgo;
 }
 
 Article.prototype.toHtml = function() {
@@ -18,7 +17,7 @@ Article.prototype.toHtml = function() {
   this.daysAgo = parseInt((new Date() - new Date(this.publishedOn))/60/60/24/1000);
   this.publishStatus = this.publishedOn ? `published ${this.daysAgo} days ago` : '(draft)';
   var html = template(this);
-  // DONE TODO: Use handlebars to render your articles.
+  // TODO: Use handlebars to render your articles.
   //       - Get your template from the DOM.
   //       - Now "compile" your template with Handlebars.
 
@@ -26,9 +25,9 @@ Article.prototype.toHtml = function() {
   //   Since your template can't hold any JS logic, we need to execute the logic here.
   //   The result is added to the object as a new property, which can then be referenced by key in the template.
   //   For example, you might want to display how old a post is, or say "(draft)" if it has no publication date:
+  
 
   // TODO: Use the function that Handlebars gave you to return your filled-in html template for THIS article.
-
   return html;
 };
 
